@@ -1,0 +1,148 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <mat-icon
+        id="location"
+        fontIcon="location_on"
+        class="material-icons"
+      ></mat-icon>
+      <span
+        style="
+          position: relative;
+          top: -7px;
+          font-weight: 700 !important;
+          font-size: 24px;
+        "
+        >Smart Park</span
+      >
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <div style="position: relative; top: -10px">
+        <mat-icon
+          fontIcon="person"
+          class="material-icons position-relative"
+          style="top: 20px"
+        ></mat-icon>
+        <span>Logged In user</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid mt-3">
+  <h2>Parking Dashboard</h2>
+  <p style="color: #888d93; font-size: 14px">
+    Manage and monitor parking spots
+  </p>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <mat-card class="card" style="width: 100%">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card-header>
+              <mat-card-title>Total Spots</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ TotalSpots }} </p>
+            </mat-card-content>
+          </div>
+          <div class="col-md-6 d-flex flex-row-reverse align-items-center">
+            <div class="dot" style="background-color: blue;"></div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3">
+      <mat-card class="card" style="width: 100%">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card-header>
+              <mat-card-title>Availble</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p style="color: green;">{{ availableSpots }} </p>
+            </mat-card-content>
+          </div>
+          <div class="col-md-6 d-flex flex-row-reverse align-items-center">
+            <div class="dot" style="background-color: green;"></div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3">
+      <mat-card class="card" style="width: 100%">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card-header>
+              <mat-card-title>Occipied</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p style="color: red;">{{ occupiedSpots }} </p>
+            </mat-card-content>
+          </div>
+          <div class="col-md-6 d-flex flex-row-reverse align-items-center">
+            <div class="dot" style="background-color: red;"></div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3">
+      <mat-card class="card" style="width: 100%">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card-header>
+              <mat-card-title>Occupacy rate</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ occupiedSpotsRate }} %</p>
+            </mat-card-content>
+          </div>
+          <div class="col-md-6 d-flex flex-row-reverse align-items-center">
+            <div class="dot" style="background-color: aqua;"></div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

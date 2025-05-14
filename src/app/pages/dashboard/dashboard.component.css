@@ -1,0 +1,33 @@
+#location {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #13c33e;
+}
+mat-icon{
+    height: 40px;
+    width: 36px;
+}
+.nav-link{
+    padding: 16px 30px !important;
+    font-family: 'Nunito' !important;
+    font-weight: 700 !important;
+    color: #888d93 !important;
+}
+.nav-link:hover{
+    color: black !important;
+}
+mat-card-content>p{
+    font-size: 36px !important;
+    font-weight: 500;
+}
+.dot{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 3rem;
+}
+mat-card-title{
+    color: #888d93;
+    font-weight: 500 !important;
+}
