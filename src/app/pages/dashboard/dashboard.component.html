@@ -77,17 +77,26 @@
   </div>
   <div class="col-md-6">
     <div class="input-group">
-      <select class="form-select">
+      <h6>Site</h6>
+      <select class="form-select" [(ngModel)]="siteID" (change)="getBuilding()">
         <option>Select Site</option>
         @for (item of siteList; track $index){
           <option [value]="item.siteId">{{item.siteName}}</option>
         }
       </select>
-      <select class="form-select">
+      <h6>Building</h6>
+      <select class="form-select" [(ngModel)]="buildingId" (change)="getFloorByBuilding()">
         <option>Select Building</option>
+        @for (item of buildingList; track $index){
+          <option [value]="item.buildingId">{{item.buildingName}}</option>
+        }
       </select>
-      <select class="form-select">
+      <h6>Floor</h6>
+      <select class="form-select" [(ngModel)]="floorId" (change)="onFloorSelect()">
         <option>Select Floor</option>
+        @for (item of floorList; track $index){
+          <option [value]="item.floorId">{{item.floorNo}}</option>
+        }
       </select>
     </div>
   </div>
@@ -150,7 +159,7 @@
         <div class="row">
           <div class="col-md-6">
             <mat-card-header>
-              <mat-card-title>Occupacy rate</mat-card-title>
+              <mat-card-title>Occupacy</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <p>{{ occupiedSpotsRate }} %</p>
