@@ -10,7 +10,7 @@ export class MasterService {
 
   constructor(private http: HttpClient) { }
 
-  API_URL = "https://api.freeprojectapi.com/api/SmartParking/";
+  API_URL = "https://api.freeprojectapi.com/api/SmartParking/"; 
 
   getSitesByClientId(): Observable<ResponseModel> {
     const clientID = 1;

@@ -72,7 +72,7 @@
   <div class="col-md-6">
     <h2>Parking Dashboard</h2>
     <p style="color: #888d93; font-size: 14px">
-    Manage and monitor parking spots
+      Manage and monitor parking spots
     </p>
   </div>
   <div class="col-md-6">
@@ -81,27 +81,35 @@
       <select class="form-select" [(ngModel)]="siteID" (change)="getBuilding()">
         <option>Select Site</option>
         @for (item of siteList; track $index){
-          <option [value]="item.siteId">{{item.siteName}}</option>
+        <option [value]="item.siteId">{{ item.siteName }}</option>
         }
       </select>
       <h6>Building</h6>
-      <select class="form-select" [(ngModel)]="buildingId" (change)="getFloorByBuilding()">
+      <select
+        class="form-select"
+        [(ngModel)]="buildingId"
+        (change)="getFloorByBuilding()"
+      >
         <option>Select Building</option>
         @for (item of buildingList; track $index){
-          <option [value]="item.buildingId">{{item.buildingName}}</option>
+        <option [value]="item.buildingId">{{ item.buildingName }}</option>
         }
       </select>
       <h6>Floor</h6>
-      <select class="form-select" [(ngModel)]="floorId" (change)="onFloorSelect()">
+      <select
+        class="form-select"
+        [(ngModel)]="floorId"
+        (change)="onFloorSelect()"
+      >
         <option>Select Floor</option>
         @for (item of floorList; track $index){
-          <option [value]="item.floorId">{{item.floorNo}}</option>
+        <option [value]="item.floorId">{{ item.floorNo }}</option>
         }
       </select>
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid ">
   <div class="row">
     <div class="col-md-3">
       <mat-card class="card" style="width: 100%">
@@ -111,11 +119,11 @@
               <mat-card-title>Total Spots</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <p>{{ TotalSpots }} </p>
+              <p>{{ TotalSpots }}</p>
             </mat-card-content>
           </div>
           <div class="col-md-6 d-flex flex-row-reverse align-items-center">
-            <div class="dot" style="background-color: blue;"></div>
+            <div class="dot" style="background-color: blue"></div>
           </div>
         </div>
       </mat-card>
@@ -128,11 +136,11 @@
               <mat-card-title>Availble</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <p style="color: green;">{{ availableSpots }} </p>
+              <p style="color: green">{{ availableSpots }}</p>
             </mat-card-content>
           </div>
           <div class="col-md-6 d-flex flex-row-reverse align-items-center">
-            <div class="dot" style="background-color: green;"></div>
+            <div class="dot" style="background-color: green"></div>
           </div>
         </div>
       </mat-card>
@@ -145,11 +153,11 @@
               <mat-card-title>Occipied</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <p style="color: red;">{{ occupiedSpots }} </p>
+              <p style="color: red">{{ occupiedSpots }}</p>
             </mat-card-content>
           </div>
           <div class="col-md-6 d-flex flex-row-reverse align-items-center">
-            <div class="dot" style="background-color: red;"></div>
+            <div class="dot" style="background-color: red"></div>
           </div>
         </div>
       </mat-card>
@@ -166,10 +174,26 @@
             </mat-card-content>
           </div>
           <div class="col-md-6 d-flex flex-row-reverse align-items-center">
-            <div class="dot" style="background-color: aqua;"></div>
+            <div class="dot" style="background-color: aqua"></div>
           </div>
         </div>
       </mat-card>
     </div>
+  </div>
+</div>
+<div class="container-fluid mt-5">
+  <div class="col-md-12 d-flex flex-row flex-wrap column-gap-3 row-gap-3 ps-4 ">
+    @for (item of parkingSpots; track $index) {
+    <mat-card style="width: 13%">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>directions_car</mat-icon>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ item }}</p>
+      </mat-card-content>
+    </mat-card>
+    }
   </div>
 </div>

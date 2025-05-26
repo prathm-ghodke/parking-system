@@ -18,8 +18,8 @@ mat-icon{
     color: black !important;
 }
 mat-card-content>p{
-    font-size: 36px !important;
-    font-weight: 500;
+    font-size: 30px !important;
+    font-weight: 400;
 }
 .dot{
     border-radius: 50%;
@@ -29,5 +29,5 @@ mat-card-content>p{
 }
 mat-card-title{
     color: #888d93;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
 }
