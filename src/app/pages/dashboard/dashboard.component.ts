@@ -2,14 +2,17 @@ import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
-import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MasterService } from '../../services/master.service';
 import { ISite, ResponseModel } from '../../model/user.model';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MatIconModule, MatCardModule, MatDividerModule, FormsModule],
+  imports: [MatIconModule, MatCardModule, FormsModule, MatFormFieldModule, MatSelectModule, MatOptionModule,MatGridListModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
