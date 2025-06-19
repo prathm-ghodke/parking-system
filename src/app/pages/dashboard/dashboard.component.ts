@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
@@ -8,11 +8,13 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MasterService } from '../../services/master.service';
 import { ISite, ResponseModel } from '../../model/user.model';
+import { LayoutComponent } from "../layout/layout.component";
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MatIconModule, MatCardModule, FormsModule, MatFormFieldModule, MatSelectModule, MatOptionModule,MatGridListModule],
+  imports: [MatIconModule, MatCardModule, FormsModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatGridListModule, LayoutComponent, MatDividerModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -26,7 +28,7 @@ export class DashboardComponent implements OnInit {
     siteList: ISite[] =[];
     buildingList: any[] =[];
     floorList: any[] =[];
-    parkingSpots: any;
+    parkingSpot: any;
     siteID: number = 0;
     buildingId: number = 0;
     floorId: number = 0;
@@ -55,11 +57,12 @@ export class DashboardComponent implements OnInit {
       }
     }
     onFloorSelect(){
-      this.parkingSpots = []
+      this.parkingSpot = []
       const floor = this.floorList.find((f:any) => f.floorId == this.floorId);
       for(let index = 0; index < floor.totalParkingSpots; index++){
         this.TotalSpots = floor.totalParkingSpots;
-        this.parkingSpots.push(index)
+        this.parkingSpot.push(index)
       }
+      console.log(floor);
     }
 }

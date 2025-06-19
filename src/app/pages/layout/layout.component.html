@@ -1,1 +1,21 @@
-<p>layout works!</p>
+<div class="container-fluid mt-3">
+  <div class="col-md-12 d-flex flex-row flex-wrap column-gap-3 row-gap-3 ps-4">
+    @if (parkingSpots) { @for (item of parkingSpots; track $index) {
+    <mat-card style="width: 13%" id="parking-spot-card">
+      <div class="d-flex flex-column align-items-center">
+        <mat-card-header>
+          <mat-card-title class="card-title"
+            >Spot {{ item + 1 }}</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <mat-icon style="border: 1px solid black">local_parking</mat-icon>
+          <p>A {{ item + 1 }}</p>
+        </mat-card-content>
+      </div>
+    </mat-card>
+    } } @else {
+    <p>No parking spots available..</p>
+    }
+  </div>
+</div>

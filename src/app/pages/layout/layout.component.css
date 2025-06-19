@@ -1,0 +1,8 @@
+mat-card:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+}
+mat-card {
+    background-color: #95c7a1;
+    border: 3px solid #0d3f18;
+}
